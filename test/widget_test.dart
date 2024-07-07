@@ -1,6 +1,7 @@
-import 'package:assigment1/CalculatorScreen.dart';
-import 'package:assigment1/main.dart';
-import 'package:assigment1/signInscreen.dart';
+
+import 'package:assignment1/calculator_screen.dart';
+import 'package:assignment1/main.dart';
+import 'package:assignment1/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -20,14 +21,14 @@ void main() {
     // Verify that we are now on the Calculator screen.
     expect(find.byType(CalculatorScreen), findsOneWidget);
 
-    // Find the '0' text in Calculator screen.
+    // Find the initial '0' text in the Calculator screen.
     expect(find.text('0'), findsOneWidget);
 
     // Tap the '1' button and trigger a frame.
     await tester.tap(find.text('1'));
     await tester.pump();
 
-    // Verify that our display shows 1.
+    // Verify that the display shows '1'.
     expect(find.text('0'), findsNothing); // '0' should not be found anymore
     expect(find.text('1'), findsOneWidget); // '1' should be found now
   });
